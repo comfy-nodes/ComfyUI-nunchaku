@@ -82,6 +82,8 @@ class ComfyFluxWrapper(nn.Module):
         self._prev_timestep = None  # for first-block cache
         self._cache_context = None
 
+        self.patch_size=config.get("patch_size", 2)
+
     def process_img(self, x, index=0, h_offset=0, w_offset=0):
         """
         Preprocess an input image tensor for the model.
